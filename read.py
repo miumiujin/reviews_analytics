@@ -22,3 +22,24 @@ for d in data:
 		new.append(d)
 print("一共有" , len(new), "筆留言長度小於150") #要退回去，等到 for迴圈跑完才print
 print(new[24494])
+
+# 這時候我們想對字串進行篩選，ex : 是否含有 great 這個單字
+great = []
+for d in data:
+	if "great" in d :
+		great.append(d)
+print("一共有" , len(great), "筆留言提到 great")	
+print(great[198640])
+
+#更高級的寫法可以一次將四行化簡成一行就好
+great = [d for d in data if "great" in d] # a.k.a清單快寫法
+#print(great)
+
+great_count = []
+for d in data:
+	if "great" in d :
+		great_count.append(1)
+print("一共有" , len(great), "筆留言提到 great")	
+# 如果我們想要計次而不是把每個出現的資料都記下來的時候
+great_count = [1 for d in data if "great" in d]
+print(len(great_count))
