@@ -14,3 +14,11 @@ for d in data :
 	#print(sum_length)
 print("平均的留言長度是", sum_length/len(data))
 
+# 現在我們想要將特定長度的樣本點篩選出來
+# 想法 : 先設一個新的空清單，然後寫一個迴圈讀取原本的資料，再去設想要的條件將符合條件的樣本點篩選出來
+new = []
+for d in data:
+	if len(d) < 150 :
+		new.append(d)
+print("一共有" , len(new), "筆留言長度小於150") #要退回去，等到 for迴圈跑完才print
+print(new[24494])
