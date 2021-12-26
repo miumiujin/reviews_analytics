@@ -1,11 +1,16 @@
+import time
+import progressbar
+
 data = []
 count = 0
+bar = progressbar.ProgressBar(max_value = 1000000)
 with open("reviews.txt", "r") as f :
 	for line in f :
 		data.append(line)
 		count += 1
 		if count % 50000 == 0 : #求餘數
 			print(len(data)) # f本身沒有長度，因此沒辦法數
+		bar.update(count)
 print("檔案讀取完了，總共有", len(data), "筆資料")
 # 到此為止我們已經把所有的資料都裝進 data 這個清單
 print(data[0])
